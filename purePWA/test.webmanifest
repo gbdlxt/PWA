@@ -1,0 +1,12 @@
+{
+  "name": "Test Progressive Web App",
+  "icons": [
+    {
+      "src": "/icon-168.png",
+      "sizes": "168x168",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "fullscreen"
+}
