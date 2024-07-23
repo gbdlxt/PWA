@@ -1,0 +1,31 @@
+{
+  "name": "Test Progressive Web App",
+  "icons": [
+    {
+      "src": "/customInstallation/icon-168.png",
+      "sizes": "168x168",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/customInstallation/screenshot-playlist.png",
+      "sizes": "1280x720",
+      "platform": "wide",
+      "label": "The main PWAmp user interface, showing a list of songs, and playback buttons."
+    },
+    {
+      "src": "/customInstallation/screenshot-visualizer.png",
+      "sizes": "1280x720",
+      "platform": "wide",
+      "label": "The PWAmp visualizer, showing the current song, the playback buttons, and a colorful visualization of the current song."
+    },
+    {
+      "src": "/customInstallation/screenshot-widget.png",
+      "sizes": "600x400",
+      "label": "The PWAmp mini-player widget"
+    }
+  ],
+  "start_url": "/customInstallation/index.html",
+  "display": "standalone"
+}
