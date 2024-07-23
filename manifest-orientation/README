@@ -1,0 +1,11 @@
+参考资料：[让 PWA 易于安装](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps/Tutorials/js13kGames/Installable_PWAs)
+
+从资料上看，让网页课安装，只需具备清单文件即可。（Android chrome必须Service Worker）
+经Mac Chrome测试，清单必须包含name、icons、start_url、display才能在地址栏出现下载按钮。
+
+注意：icons的图片必须是168x168，否则地址栏也不会出现下载按钮，暂时不知道是何原理
+
+当前目录运行后，打开http://127.0.0.1:8081即可
+```
+http-server -p 8081
+```
