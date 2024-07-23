@@ -1,0 +1,196 @@
+*, :after, :before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+body, html {
+  background-color: #fff;
+}
+body {
+  font-family: Google Sans, sans-serif;
+  line-height: inherit;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+}
+@keyframes loading-rotate {
+  0% {
+      transform: rotate(0)
+  }
+
+  to {
+      transform: rotate(1turn)
+  }
+}
+@keyframes loading-circular {
+  0% {
+      stroke-dasharray: 1,200;
+      stroke-dashoffset: 0
+  }
+
+  50% {
+      stroke-dasharray: 90,150;
+      stroke-dashoffset: -40
+  }
+
+  to {
+      stroke-dasharray: 90,150;
+      stroke-dashoffset: -120
+  }
+}
+.pwa-top {
+  height: 14.4vw;
+  max-height: 108px;
+}
+.pwa-top > img {
+  /* box-shadow: 0 5px 12px 0 rgba(0, 0, 0, .3); */
+  background-color: #fff;
+  left: 0;
+  margin: 0 auto;
+  max-width: 750px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+.pwa-container {
+  overflow: hidden;
+  padding: 54px 22px 44px;
+  width: 100%;
+}
+.pwa-container .header {
+  display: flex;
+  margin-bottom: 28px;
+}
+.pwa-container .header .header_icon {
+  margin-right: 22px;
+  align-items: center;
+  display: flex;
+  height: 74px;
+  justify-content: center;
+  position: relative;
+  width: 74px;
+}
+.pwa-container .header .header_icon img {
+  border-radius: 20%;
+  display: block;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  overflow: hidden;
+  transition: all .35s;
+  width: 100%;
+}
+.pwa-container .header .header_loading {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 5;
+}
+.pwa-container .header .header_loading svg {
+  animation: loading-rotate 2s linear infinite;
+  color: #028760;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.pwa-container .header .header_loading svg circle {
+  stroke: #028760;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  animation: loading-circular 1.5s ease-in-out infinite;
+}
+.pwa-container .header .header_info {
+  flex: 1;
+  overflow: hidden;
+}
+.pwa-container .header .header_info .title {
+  line-height: 32px;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+  margin: 0;
+}
+.pwa-container .header .header_info .title span {
+  color: #111;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.pwa-container .header .header_info .description {
+  color: #028760;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 23px;
+  margin: 0 0 5px;
+}
+.pwa-container .header .header_info .progress {
+  color: #333;
+  display: none;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  margin: 0 0 3px;
+}
+.pwa-container .header .header_info .play {
+  align-items: center;
+  color: #333;
+  display: flex;
+  font-size: 10px;
+  font-weight: 400;
+  height: 14px;
+}
+.pwa-container .header.active .header_icon img {
+  height: 34px;
+  width: 34px;
+}
+.pwa-container .header.active .header_loading {
+  opacity: 1;
+  visibility: visible;
+}
+.pwa-container .header.active .header_info .description {
+  display: none;
+}
+.pwa-container .header.active .header_info .progress {
+  display: block;
+}
+.pwa-container .info {
+  margin-bottom: 38px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.pwa-container .install {
+  margin-bottom: 28px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.pwa-container .install .view {
+  background-color: #028760;
+  border-radius: 8px;
+  color: #faff00;
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  text-align: center;
+  line-height: 48px;
+  height: 48px;
+  cursor: pointer;
+  display: none;
+}
+.pwa-container .install .view.active {
+  display: block;
+}

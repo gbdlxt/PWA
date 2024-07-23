@@ -1,48 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="">
 
 <head>
-  <title>T PWA</title>
-  <meta charset="UTF-8">
-  <link rel="manifest" href="test.webmanifest">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="manifest" href="./test.webmanifest">
+  <link href="./pwa.css" rel="stylesheet">
+    <title>PWA自定义下载页</title>
 </head>
+
 <body>
-  <h1>Custom Installation</h1>
-  <div id="mark" style="display: none;">
-    <button id="installBtn" style="margin: 20px;width: 100%;height: 400px;">一键安装应用</button>
+  <div class="pwa-top">
+    <img src="./google-play.png">
   </div>
+  <div class="pwa-container">
+    <div class="header" id="pwaHeader">
+      <div class="header_icon">
+        <img src="./android-chrome-512x512.png">
+        <div class="header_loading" id="iconLoading">
+          <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" fill="none" r="20"></circle>
+          </svg>
+        </div>
+      </div>
+      <div class="header_info">
+        <p class="title"><span>Zego: GoEnjoy</span></p>
+        <p class="description" id="pwaInfoDesc">Zego RTC</p>
+        <p class="progress" id="pwaInfoProgress">0%</p>
+        <p class="play"> Verified by Play Protect</p>
+      </div>
+
+    </div>
+    <div class="info"></div>
+    <div class="install">
+      <div id="rapidInstall" class="view active"></div>
+      <!-- <div id="installing" class="view">Installing</div>
+      <div id="play" class="view">Play</div> -->
+    </div>
+    <div class="share"></div>
+    <div class="scroll"></div>
+    <div class="discription"></div>
+  </div>
+  <script src="./pwa.js"></script>
 </body>
-<script>
-  let deferredPrompt
-  // 阻止默认弹出安装事件
-  window.addEventListener('beforeinstallprompt', (event) => {
-    // 阻止默认行为
-    event.preventDefault()
-    // 保存事件，稍后触发安装
-    deferredPrompt = event
-    // 显示自定义安装按钮
-    document.getElementById('mark').style.display = 'block'
-  })
-
-  // 监听按钮点击事件
-  document.getElementById('installBtn').addEventListener('click', (e) => {
-    e.preventDefault();
-    if (deferredPrompt) {
-      // 触发PWA安装
-      deferredPrompt.prompt()
-
-      // 监听安装结果
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('用户安装了PWA')
-        } else {
-          console.log('用户拒绝安装PWA')
-        }
-        // 重置事件
-        deferredPrompt = null
-      })
-    }
-  });
-</script>
 
 </html>
