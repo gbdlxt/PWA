@@ -1,0 +1,20 @@
+{
+  "name": "Test Progressive Web App",
+  "short_name": "TPWA",
+  "start_url": "/manifest-orientation/index.html",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "/manifest-orientation/icon-168.png",
+      "sizes": "168x168",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/manifest-orientation/screenshot-playlist.png",
+      "sizes": "1280x720",
+      "label": "The main PWAmp user interface, showing a list of songs, and playback buttons."
+    }
+  ]
+}
