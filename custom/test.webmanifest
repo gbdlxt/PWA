@@ -1,0 +1,20 @@
+{
+  "name": "Test Web App",
+  "short_name": "TWA",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "./icon-168.png",
+      "sizes": "168x168",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./pwa-screenshot.png",
+      "sizes": "600x400",
+      "label": "The PWAmp mini-player widget"
+    }
+  ]
+}

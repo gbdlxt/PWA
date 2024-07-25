@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>manifest-shortcuts</title>
+  <link rel="manifest" href="test.webmanifest">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+
+<body>
+  <h1>manifest-shortcuts</h1>
+  <button id="installBtn">点击安装</button>
+  <a href="/manifest-shortcuts/shortcuts.html">shortcuts</a>
+  <a href="/manifest-shortcuts/shortcuts1.html">shortcuts1</a>
+</body>
+<script>
+  let deferredPrompt
+  // 阻止默认弹出安装事件
+  window.addEventListener('beforeinstallprompt', (event) => {
+    // 阻止默认行为
+    event.preventDefault()
+    // 保存事件，稍后触发安装
+    deferredPrompt = event
+  })
+
+  // 监听按钮点击事件
+  document.getElementById('installBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    if (deferredPrompt) {
+      // 触发PWA安装
+      deferredPrompt.prompt()
+      // 监听安装结果
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('用户安装了PWA')
+        } else {
+          console.log('用户拒绝安装PWA')
+        }
+        // 重置事件
+        deferredPrompt = null
+      })
+    } else {
+      // 不支持PWA安装，打开页面
+    }
+  });
+</script>
+
+</html>

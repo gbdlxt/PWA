@@ -2,11 +2,11 @@
   "name": "Test Progressive Web App",
   "icons": [
     {
-      "src": "/purePWA/icon-168.png",
+      "src": "/sw-cache/icon-168.png",
       "sizes": "168x168",
       "type": "image/png"
     }
   ],
-  "start_url": "/purePWA/index.html",
+  "start_url": "/sw-cache/index.html",
   "display": "fullscreen"
 }

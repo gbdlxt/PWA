@@ -1,0 +1,46 @@
+{
+  "name": "Test Progressive Web App",
+  "short_name": "TPWA",
+  "start_url": "/manifest-shortcuts/index.html",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "/manifest-shortcuts/icon-168.png",
+      "sizes": "168x168",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/manifest-shortcuts/screenshot-playlist.png",
+      "sizes": "1280x720",
+      "label": "The main PWAmp user interface, showing a list of songs, and playback buttons."
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Shortcuts page",
+      "short_name": "Shortcuts",
+      "url": "/manifest-shortcuts/shortcuts.html",
+      "icons": [
+        { 
+          "src": "/manifest-shortcuts/android-chrome-192x192.png", 
+          "sizes": "192x192", 
+          "type": "image/png" 
+        }
+      ]
+    },
+    {
+      "name": "xxxx",
+      "short_name": "X",
+      "url": "/manifest-shortcuts/shortcuts1.html",
+      "icons": [
+        {
+          "src": "/manifest-shortcuts/icon-168.png",
+          "sizes": "168x168",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

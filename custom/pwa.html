@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="manifest" href="./test.webmanifest">
+  <link href="./pwa.css" rel="stylesheet">
+    <title>PWA自定义安装页</title>
+</head>
+
+<body>
+  <div class="pwa-top">
+    <img src="./pwa-top.png">
+  </div>
+  <div class="pwa-container">
+    <div class="header" id="pwaHeader">
+      <div class="header_icon">
+        <img src="./icon-168.png">
+        <div class="header_loading" id="iconLoading">
+          <svg viewBox="25 25 50 50">
+            <circle cx="50" cy="50" fill="none" r="20"></circle>
+          </svg>
+        </div>
+      </div>
+      <div class="header_info">
+        <p class="title"><span>Zego: GoEnjoy</span></p>
+        <p class="description" id="pwaInfoDesc">Zego RTC</p>
+        <p class="progress" id="pwaInfoProgress">0%</p>
+        <p class="play"> Verified by Play Protect</p>
+      </div>
+
+    </div>
+    <div class="info"></div>
+    <div class="install">
+      <div id="rapidInstall" class="view active"></div>
+    </div>
+    <div class="share"></div>
+    <div class="scroll"></div>
+    <div class="discription"></div>
+  </div>
+  <script src="./pwa.js"></script>
+</body>
+
+</html>
